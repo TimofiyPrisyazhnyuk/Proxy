@@ -1,7 +1,8 @@
 <?php
 
-namespace Proxy;
-
+/**
+ * Class BankAccountProxy
+ */
 class BankAccountProxy extends HeavyBankAccount implements BankAccount
 {
     /**

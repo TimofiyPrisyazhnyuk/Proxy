@@ -1,7 +1,8 @@
 <?php
 
-namespace Proxy;
-
+/**
+ * Class HeavyBankAccount
+ */
 class HeavyBankAccount implements BankAccount
 {
     /**
@@ -9,6 +10,10 @@ class HeavyBankAccount implements BankAccount
      */
     private $transactions = [];
 
+    /**
+     * @param int $amount
+     * @return mixed|void
+     */
     public function deposit(int $amount)
     {
         $this->transactions[] = $amount;

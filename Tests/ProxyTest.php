@@ -1,15 +1,22 @@
 <?php
 
-namespace Proxy\Tests;
+namespace Tests;
 
-use Proxy\BankAccountProxy;
+use BankAccountProxy;
 
-require __DIR__ . '/../BankAccount.php';
-require __DIR__ . '/../HeavyBankAccount.php';
-require __DIR__ . '/../BankAccountProxy.php';
+spl_autoload_register(function ($class) {
+    include __DIR__ . '/../' . $class . '.php';
+});
 
+/**
+ * Class ProxyTest
+ * @package Proxy\Tests
+ */
 class ProxyTest
 {
+    /**
+     * Test proxy.
+     */
     public function testProxy()
     {
         $bankAccount = new BankAccountProxy();
@@ -18,4 +25,5 @@ class ProxyTest
     }
 }
 
+// Run test.
 (new ProxyTest())->testProxy();
